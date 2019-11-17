@@ -1,5 +1,3 @@
-# Music-Classifier
-
               Brent Mckinney                                                      Kevin Horning
               bmckinney12@student.gsu.edu                                         Khorning2@student.gsu.edu
 
