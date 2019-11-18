@@ -2,13 +2,6 @@
               bmckinney12@student.gsu.edu                                         Khorning2@student.gsu.edu
 
 
-Abstract:
+Our goal was to create a music classifier that would identify the genre of a small music sample. In order to accomplish this, we trained a Convolutional Neural Network on an online dataset of 1000 songs in 10 genres. After 5 epochs, the CNN was found to have 96% accuracy on classifying test songs from the dataset.
 
-Our project is to train our model to classify a specific song to a music genre and to be able to recognize a specific song to be in a specific music genre in our testing. We were motivated because we love music and want to better understand how different classification of music work and to see if a machine can automatically predict the genre of a song. This task will challenge us to use Python and apply it to a topic that we’re passionate about.
-
-Running our program:
-
-We first downloaded a public dataset from the following link: http://opihi.cs.uvic.ca/sound/ From here we ran the create_spectrogram.py script. This created folders for each genre, and populated them with the corresponding spectrograms. Then we spent a lot of time trying to manipulate them into training and test data set with create_dataset.py, but ultimately figured out a way to achieve this using Keras. We accomplished this step, as well as building our neural network in the neuralnet_py.py script. 
-
-
-
+We found the online dataset of songs at http://opihi.cs.uvic.ca/sound/ to experiment on. We wanted try the approach of training the network with input of spectrograms instead of directly from the audio files. To do this, we had to convert the song files, in .au format, to .wav files using the AU_to_WAV.py script. This allowed librosa to convert each file to a spectrogram image and folders were created for each genre with the spectrogram images in them with the create_spectrogram.py script. After this, the create_dataset.py script vectorizes and shuffles the spectrogram images so that they, and their classification, can be put into the CNN for training and testing. Finally, the CNN was set up and trained on the input data using the neuralnet.py script. 
