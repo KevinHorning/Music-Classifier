@@ -40,14 +40,9 @@ create_training_data()
 print("Length of Training Data is:")
 print(len(training_data))
 print(" ")
-# print(training_data[::1])
-
 
 # We shuffle the data to ensure correct learning instead of memorization
 random.shuffle(training_data)
-
-# for sample in training_data[:10]:
-#         print("Shuffled Training labels: ",sample[1])
 
 X = []
 y = []
@@ -55,9 +50,6 @@ for features, label in training_data:
     X.append(features)
     y.append(label)
 
-# print(X.shape)
-
-# X = np.array(X).reshape(-1, 1065, 470)
 X = np.array(X).reshape(-1, 1065, 470)
 
 # print("Saving X")
@@ -73,12 +65,3 @@ print("Pickling Y")
 pickle.dump(y, pickleOut)
 pickleOut.close()
 print("Finished pickling Y \n")
-
-# pickleIn = open("X.pickle", "rb")
-# print("Reading pickled X")
-# X = pickle.load(pickleIn)
-
-# print(X[1])
-# print("Checking to see if our saved data works")
-# loadedX = np.load('X_data.npy')
-# print(loadedX)
